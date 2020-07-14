@@ -63,7 +63,7 @@ express()
 
   .get("/hangman/word/", (req, res) => {
     const randomWordIndex = Math.floor(Math.random() * 11);
-    console.log(randomWordIndex);
+    // console.log(randomWordIndex);
     const secretWord = words[randomWordIndex];
     console.log(secretWord);
     res.status(200).json({
@@ -78,11 +78,18 @@ express()
     const guessWordObject = words.find((word) => word.id === guessWordID);
     const guessWord = guessWordObject.word;
     const guessWordArray = guessWord.split("");
-    const guessArray = guessWordArray.map((letter) => letter === guessLetter);
-    res.status(200).json({
-      status: 200,
-      guess: guessArray,
-    });
+    if (guessWordArray.find((letter) => letter === guessLetter)) {
+      const guessArray = guessWordArray.map((letter) => letter === guessLetter);
+      res.status(200).json({
+        status: 200,
+        guess: guessArray,
+      });
+    } else {
+      res.status(400).json({
+        status: 400,
+        message: "this letter is not in the word",
+      });
+    }
   })
 
   .listen(8000, () => console.log(`Listening on port 8000`));
