@@ -92,4 +92,10 @@ express()
     }
   })
 
+  // const handleLetterGuess = (req,res) => {
+  //   const letterGuess = req.body.letterinput;
+  // }
+
+  // .post("/letterguess", handleLetterGuess)
+
   .listen(8000, () => console.log(`Listening on port 8000`));
