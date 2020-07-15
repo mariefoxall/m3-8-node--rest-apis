@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap');
-@import '_reset.css';
-@import '_typography.css';
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Slab:300&display=swap");
+@import "_reset.css";
+@import "_typography.css";
 
 body {
   background: #fafafa;
@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: slategray;
 }
 .main.four-oh-four .title {
@@ -25,9 +25,24 @@ body {
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   margin-top: 24px;
+}
+.wordspaces {
+  display: flex;
+}
+
+.letterspace {
+  border-bottom: 2px solid black;
+  margin: 5px;
+  list-style-type: none;
+  height: 50px;
+  width: 50px;
+}
+
+.wordbutton {
+  display: inline;
 }
 
 .box {
